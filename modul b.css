@@ -1,0 +1,190 @@
+/* СБРОС */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {background: #303030; font-family: Arial; color: #eee;}
+
+html { scroll-behavior: smooth; }
+
+/* ───────── HEADER ───────── */
+.head {
+    width: 100%;
+    background: #1c1c1c;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.head button {
+    padding: 10px 15px;
+    border: 1px solid #333;
+    background: #1f1f1f;
+    border-radius: 8px;
+    color: orange;
+    cursor: pointer;
+    transition: .3s;
+}
+.head button:hover { box-shadow: 0 0 10px orange; }
+#kool{
+    color: orange;
+}
+
+/* ───────── ГЛАВНАЯ ───────── */
+.glavnaya {
+    min-height: 100vh;
+    background: url(media/pubg-playerunknowns-battlegrounds-pubg-pabg.webp) center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.text h1 {font-size: 2.6rem; color: orange; text-shadow: 3px 3px 2px #000;}
+.text p {font-size: 1.4rem; color: orange; margin: 10px 0;}
+
+#do {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #222;
+    border: 1px solid #333;
+    color: orange;
+    cursor: pointer;
+}
+#do:hover { box-shadow: 0 0 10px orange; }
+
+/* ───────── БАННЕР ───────── */
+#op {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* ───────── ТАБЫ ───────── */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.features a {
+    background: rgba(255,255,255,0.06);
+    padding: 15px;
+    color: orange;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid #333;
+    transition: .3s;
+}
+
+.features a:hover {
+    box-shadow: 0 0 10px orange;
+    background: rgba(255,165,0,0.1);
+}
+
+/* ───────── КАРТОЧКА ───────── */
+.card {
+    background: rgba(255,255,255,0.07);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 900px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,165,0,0.3);
+    box-shadow: 0 0 15px rgba(255,165,0,0.25);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* ───────── СПИСКИ ───────── */
+.list {margin: 15px 0;}
+.list li {margin: 10px 0; line-height: 1.4;}
+
+/* ───────── ТАБ СОДЕРЖИМОЕ ───────── */
+.tab-content {display: none; animation: fade .5s;}
+.tab-content:target {display: block;}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ───────── ТАБЛИЦА ЛИДЕРОВ ───────── */
+.leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.leaderboard th, .leaderboard td {
+    padding: 10px;
+    border: 1px solid #444;
+}
+.leaderboard th {background: #222; color: orange;}
+.leaderboard tr:nth-child(even) {background: rgba(255,255,255,0.05);}
+
+/* ───────── FOOTER ───────── */
+footer {text-align: center; padding: 20px;}
+#pm {width: 90%; max-width: 700px;}
+/* ───── УЛУЧШЕНИЯ UX ───── */
+
+/* Контент уже не прячется под header */
+main {
+    padding-top: 80px;
+}
+
+/* Липкие табы */
+.features {
+    position: sticky;
+    top: 60px;
+    background: #303030;
+    z-index: 500;
+}
+
+/* Активный таб */
+.features a:target,
+.features a.active {
+    box-shadow: 0 0 15px orange;
+    transform: scale(1.03);
+}
+
+/* Карточка — мягче и аккуратнее */
+.card {
+    line-height: 1.6;
+}
+
+/* Текст не растягивается слишком широко */
+.card p, .card ul {
+    max-width: 750px;
+    margin: auto;
+}
+
+/* Таб-контент плавнее */
+.tab-content {
+    padding-bottom: 40px;
+}
+
+/* Кнопки — приятнее нажимать */
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Адаптация под телефон */
+@media (max-width: 768px) {
+    .text h1 {
+        font-size: 2rem;
+    }
+    .text p {
+        font-size: 1.1rem;
+    }
+    .head {
+        flex-wrap: wrap;
+    }
+}

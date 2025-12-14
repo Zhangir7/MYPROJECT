@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Байланыс — Zhangirkhan</title>
+<link rel="stylesheet" href="1.css">
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+
+<script type="text/javascript">
+  (function(){
+    // !!! ВАЖНО: ПРОВЕРЬТЕ СВОЙ PUBLIC KEY !!!
+    emailjs.init("776qzKoLDEOur1Zyw"); 
+  })();
+</script>
+
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html">Zhangirkhan</a>
+<nav class="main-nav">
+<a href="index.html">Басты бет</a>
+<a href="about.html">Мен туралы</a>
+<a href="projects.html">Жобалар</a>
+<a href="contact.html">Байланыс</a>
+</nav>
+<button class="nav-toggle" aria-label="menu">☰</button>
+</div>
+</header>
+
+
+<main class="container">
+<h1>Байланыс</h1>
+<p>Төмендегі форма арқылы хабарласыңыз — немесе тікелей электрондық пошта мен әлеуметтік желілер арқылы.</p>
+
+
+<form id="contactForm" class="contact-form" onsubmit="return handleForm(event)">
+<label>Аты-жөні
+<input type="text" name="name" required>
+</label>
+<label>Email
+<input type="email" name="email" required>
+</label>
+<label>Хабарлама
+<textarea name="message" rows="6" required></textarea>
+</label>
+<button class="btn" type="submit">Жіберу</button>
+</form>
+
+<div id="statusMessage" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none;"></div>
+
+<div class="contacts">
+<p><strong>Email:</strong> <a href="https://mail.google.com/mail/u/0/#inbox">jangirhantocabaev@gmail.com</a></p>
+<p><strong>WhatsApp:</strong> <a href="https://wa.me/7700xxxxxxx" target="_blank" rel="noopener">+7 777 658 13 62</a></p>
+</div>
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>© 2025 Zhangirkhan</p>
+</div>
+</footer>
+
+<script>
+    // ------------------------------------------------------------------
+    // Функция обработки формы
+    // ------------------------------------------------------------------
+    function handleForm(event) {
+        event.preventDefault(); // Предотвращаем стандартную перезагрузку страницы
+      
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('statusMessage');
+        
+        // Предварительное сообщение о начале отправки
+        statusDiv.style.display = 'block';
+        statusDiv.style.backgroundColor = 'lightyellow'; // Временный стиль для статуса
+        statusDiv.style.color = 'black';
+        statusDiv.innerText = "Хабарлама жіберілуде... (Сообщение отправляется...)";
+        
+        // Получаем данные формы
+        const formData = {
+          name: form.name.value,
+          email: form.email.value,
+          message: form.message.value
+        };
+      
+        // Отправка через EmailJS
+        emailjs.send(
+            // !!! ВАЖНО: ПРОВЕРЬТЕ СВОЙ SERVICE ID !!!
+            'service_j5lsn2a', 
+            // !!! ВАЖНО: ПРОВЕРЬТЕ СВОЙ TEMPLATE ID !!!
+            'template_zno7818', 
+            formData
+        )
+        .then(function(response) {
+            // Успех
+            statusDiv.style.backgroundColor = '#d4edda'; // Зеленый цвет
+            statusDiv.style.color = '#155724';
+            statusDiv.innerText = "✅ Хабарлама сәтті жіберілді! (Сообщение отправлено успешно!)";
+            form.reset(); 
+            // Скрываем сообщение через 5 секунд
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000); 
+
+        }, function(error) {
+            // Ошибка
+            statusDiv.style.backgroundColor = '#f8d7da'; // Красный цвет
+            statusDiv.style.color = '#721c24';
+            statusDiv.innerText = `❌ Жіберу кезінде қате шықты. Код ошибки: ${error.status}. (Ошибка при отправке.)`;
+            
+            // Оставляем сообщение об ошибке видимым
+        });
+      
+        return false;
+    }
+
+    // ------------------------------------------------------------------
+    // Код для кнопки "Наверх"
+    // ------------------------------------------------------------------
+    const btn = document.createElement("button");
+    btn.innerText = "▲";
+    btn.id = "topBtn";
+    document.body.appendChild(btn);
+
+    // Минимальные стили для кнопки "Наверх", чтобы она работала
+    btn.style.position = "fixed";
+    btn.style.bottom = "20px";
+    btn.style.right = "20px";
+    btn.style.padding = "10px";
+    btn.style.zIndex = "1000";
+    btn.style.cursor = "pointer";
+
+    btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P-Media</title>
+    <link rel="stylesheet" href="modul b.css">
+</head>
+
+<body>
+
+<header class="head">
+    <button onclick="window.location.href='#gd'">Домой</button>
+    <button onclick="window.location.href='#ftu'">Функции</button>
+    <button onclick="window.location.href='#pm'">Карта</button>
+    <button><a href="index.html" id="kool">Автор</a></button>
+</header>
+
+<section class="glavnaya" id="gd">
+    <div class="text">
+        <h1>Платформа веб-игр нового поколения</h1>
+        <p>PUBG для разработчиков, игроков и рекламодателей.</p>
+        <button id="do" onclick="window.location.href='#op'">DOWN</button>
+    </div>
+</section>
+
+<img src="media/Баннер.jpg" id="op">
+
+<main>
+
+    <!-- ───────── ТАБЫ ───────── -->
+    <div class="features" id="ftu">
+        <a href="#tab1" class="tab">Игровые версии</a>
+        <a href="#tab2" class="tab">Таблица лидеров</a>
+        <a href="#tab3" class="tab">Профиль игрока</a>
+        <a href="#tab4" class="tab">Рейтинг игры</a>
+    </div>
+
+    <!-- ───────── ТАБ 1 ───────── -->
+    <div id="tab1" class="tab-content">
+        <div class="card">
+            <h2>Игровые версии PUBG</h2>
+            <p>Официальные версии PUBG, доступные на разных платформах.</p>
+
+            <ul class="list">
+                <li><strong>PUBG: Battlegrounds (ПК)</strong> — оригинальная версия игры. 
+                    Высокая графика, киберспорт, клановые игры.</li>
+
+                <li><strong>PUBG Mobile</strong> — мобильная версия, одна из самых популярных игр мира.
+                    Миллионы игроков онлайн ежедневно.</li>
+
+                <li><strong>PUBG Console</strong> — версии для PS4, PS5, Xbox One и Xbox Series. 
+                    Полная адаптация управления под геймпад.</li>
+            </ul>
+
+            <img src="media/gr-stocks.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- ───────── ТАБ 2 ───────── -->
+    <div id="tab2" class="tab-content">
+        <div class="card">
+            <h2>Таблица лидеров PUBG</h2>
+            <p>Пример рейтинга сильнейших игроков (по KDA и числу побед).</p>
+
+            <table class="leaderboard">
+                <tr><th>Место</th><th>Игрок</th><th>Очки</th></tr>
+                <tr><td>1</td><td>Lollita</td><td>77 568</td></tr>
+                <tr><td>2</td><td>iZooom</td><td>75 084</td></tr>
+                <tr><td>3</td><td>DRINATIK</td><td>63 630</td></tr>
+                <tr><td>4</td><td>SP3RMUZEN</td><td>62 652</td></tr>
+                <tr><td>5</td><td>QwertyMan</td><td>59 240</td></tr>
+            </table>
+
+            <img src="media/leaderboard.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- ───────── ТАБ 3 ───────── -->
+    <div id="tab3" class="tab-content">
+        <div class="card">
+            <h2>Профиль игрока PUBG</h2>
+            <p>Каждый игрок имеет детальную статистику:</p>
+
+            <ul class="list">
+                <li><strong>KDA</strong> — соотношение убийств, смертей и ассистов.</li>
+                <li><strong>Damage</strong> — средний урон за матч.</li>
+                <li><strong>Win Rate</strong> — процент побед.</li>
+                <li><strong>Top 10%</strong> — стабильность игрока.</li>
+                <li><strong>Ранг</strong> — Bronze / Silver / Gold / Platinum / Diamond / Ace / Conqueror.</li>
+                <li><strong>История матчей</strong> — подробный список игр.</li>
+            </ul>
+
+            <img src="media/profile.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- ───────── ТАБ 4 ───────── -->
+    <div id="tab4" class="tab-content">
+        <div class="card">
+            <h2>Рейтинг PUBG</h2>
+            <p>Общий рейтинг игры, основанный на оценках игроков.</p>
+
+            <ul class="list">
+                <li><strong>Steam рейтинг:</strong> ~60/100 (смешанные отзывы).</li>
+                <li><strong>PUBG Mobile</strong>: 4.1/5 в Google Play, 4.3/5 в App Store.</li>
+                <li><strong>Онлайн:</strong> ежедневно сотни тысяч игроков.</li>
+                <li><strong>Киберспорт:</strong> международные турниры PCS, PMGC.</li>
+            </ul>
+
+            <img src="media/rating.jpg" alt="">
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <h3>P-Media</h3>
+    <p>P-Media — новая платформа HTML5-игр и развлечений.</p>
+    <img src="media/maps.jpg" id="pm" alt="">
+</footer>
+
+</body>
+</html>
